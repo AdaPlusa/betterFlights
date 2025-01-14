@@ -15,10 +15,10 @@
         </div>
         <nav>
             <ul>
-                <li><a href="../strony/logowanie.php">Panel Logowania</a></li>
-                <li><a href="../strony/wyszukiwanie.php">Panel Wyszukiwania</a></li>
-                <li><a href="../strony/panel_uzytkownika.php">Panel Użytkownika</a></li>
-                <li><a href="../strony/panel_administratora.php">Panel Administratora</a></li>
+                <li><a href="strony/logowanie.php">Panel Logowania</a></li>
+                <li><a href="../rezerwacje/formularz.php">Panel Wyszukiwania</a></li>
+                <li><a href="strony/panel_uzytkownika.php">Panel Użytkownika</a></li>
+                <li><a href="strony/panel_administratora.php">Panel Administratora</a></li>
             </ul>
         </nav>
     </div>
@@ -28,7 +28,7 @@
 <div class="hero">
     <h1>BetterFlights</h1>
     <p>Znajdź najlepsze loty na świecie. Komfort, bezpieczeństwo i wygoda w jednym miejscu.</p>
-    <a href="../strony/wyszukiwanie.php" class="btn">Sprawdź loty</a>
+    <a href="../rezerwacje/formularz.php" class="btn">Sprawdź loty</a>
 </div>
 
 <!-- Stopka -->
