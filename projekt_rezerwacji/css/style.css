@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* bardzo jasny niebieski*/
+    padding: 3%; /* margines przegladarki */
+    display: flex;
+    flex-direction: column; /* Ustaw elementy w kolumnie */
+    align-items: center; /* wyrownanie zawartosci pionowo w osi Y na srodku strony */
+    min-height: 100vh; /* minimalna wysokość na cały ekran */
+}
+
+.formularz {
+    background-color: #e8f1fb; /* jasno niebieski */
+    padding: 1%; /* odstep wewnetrzny */
+    border-radius: 10px; /* zaokraglone rogi */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* cień */
+    display: flex;
+    flex-direction: column; /* kolumny jedna pod drugą */
+    align-items: normal; /* szerokosc wewnetrznych ele. formularza */
+    max-width: 100%; /* maksymalna szerokosc formularza */
+    width: 100%; /* szerokosc formularza */
+}
+
+/* przyciski "Lot w obie strony" i "Lot w jedną stronę".  */
+.typ-lotu {
+    display: flex; /* uklad przyciskow w linii poziomej obok siebie */
+    justify-content: left; /* wyrownanie od lewej strony formularza */
+    align-items: center; /* wyrownanie w pionie */
+    gap: 20px; /* odstep miedzy elementami */
+}
+/* przyciski "Lot w obie strony" i "Lot w jedną stronę".  */
+.typ-lotu button {
+    background-color: transparent; /* przezroczyste tlo */
+    border: 1px solid #0056b3; /* obwodka w kolorze ciemnoniebieskim */
+    font-size: 16px; /* rozmiar tekstu */
+    padding: 10px 15px; /* odstep od gory, od dolu, od lewej i od prawej */
+    cursor: pointer; /* zmiana kursera na wskazujacy palec po najechaniu */
+    margin-bottom: 20px; /* odstep pod przyciskiem */
+    margin-top: 20px; /* odstep nad przyciskiem */
+}
+/* wyglad aktywnego przycisku "Lot w obie strony" i "Lot w jedną stronę" */
+.typ-lotu .aktywny {
+    color: #0056b3; /* ciemnoniebieski */
+    border-bottom: 2px solid #0056b3; /* dolna obwodka ciemnoniebieska */
+    font-weight: bold; /* pogrubiony napis przycisku */
+}
+/* kontenery dla roznych pol form, np. skad, dokad, daty, itd. */
+.pole {
+    margin-bottom: 20px; /* odstep pod elementami */
+    display: flex; /* latwe zarzadzanie etykietami, polami wyboru, poziomo, pionowo */
+    flex-direction: column; /* elementy w kolumnie, czemu nie w row??  */
+    min-width: 150px; /* minimalna szerokosc kontenera */
+
+
+}
+/* tekst dla pola etykiet */
+.pole label {
+    font-size: 16px;
+    color: #333; /* ciemnoszary */
+    margin-bottom: 10px; /* Zmniejszenie odstępu między etykietą a polem */
+}
+/* stylizacja elementow w srodku */
+.pole input, .pole select {
+    padding: 15px; /* margines wewnetrzny */
+    font-size: 16px;
+    width: 200px; /* Zwiększenie szerokości pól */
+    border: 1px solid #0056b3; /* kolor obwodki, ciemnoniebieska */
+    border-radius: 5px; /* zaokragla rogi */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* wewnetrzny cien w polu
+     inset - cien wewnatrz elementu
+     0- brak przesuniecisa w poziomie
+     2px cien przesuniet w pionie o 2pc
+     4px - cien rozmyty
+     0,0,0,0.1 - cien jest czarny z przezroczystoscia 10%*/
+}
+/* rozwijanie listy w formularzu */
+.pole select {
+    /* wylaczenie domyslnego wygladu dla przegladarek */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff; /* kolor bialy w srodku */
+    /* dodanie strzalki w polach po prawej stronie */
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%23333"><path fill-rule="evenodd" d="M5.293 7.707a1 1 0 011.414 0L10 11.586l3.293-3.879a1 1 0 111.414 1.415l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.415z" clip-rule="evenodd"/></svg>');
+    background-repeat: no-repeat; /* zapobiega powtarzaniu sie strzalki */
+    background-position: right 10px center; /* pozycja strzalki */
+    background-size: 12px; /* rozmiar strzalki */
+}
+/* odpowiada za wyszukiwanie lotow w formularzu */
+#szukaj {
+    height: 40px; /* wysokosc przycisku */
+    padding: 0px 20px; /* odstep napisu od gory i dolu oraz od lewej i prawej */
+    background-color: #d9534f; /* kolor czerwony */
+    color: white; /* kolor tekstu biały */
+    font-size: 16px;
+    border: 1px solid #333;/* domyslna obwodka szara */
+    border-radius: 5px; /* zaokragla brzegi */
+    cursor: pointer; /* kursor wskazujacy palec */
+    margin-rigt: 20px; /* Odsunięcie od poprzedniego elementu */
+    margin-top: 30px; /* Odsunięcie od poprzedniego elementu */
+}
+#szukaj:hover {
+    background-color: #c9302c; /* po najechaniu zmienia przycisk na ciemniejszy */
+}
+
+form {
+    display: flex;
+    align-items: center; /* Wyrównaj elementy w pionie */
+    gap: 15px; /* Odstęp między elementami */
+    justify-content: center; /* Wszystkie elementy wyrównane do lewej */
+    flex-wrap: nowrap; /* Wszystkie elementy w jednym wierszu */
+}
+
+.kontener-pasazerowie {
+    display: flex;
+    align-items: center; /* Ustawia wszystkie elementy w pionie na środku */
+    gap: 5px; /* Odstęp między przyciskami i polem liczby */
+}
+/* przyciski + i - */
+.przycisk {
+    background-color: #0056b3; /* Niebieskie tło przycisku */
+    color: white; /* Biały kolor tekstu */
+    font-size: 16px;
+    border: 1px solid #0056b3; /* kolor obwodki, ciemnoniebieska */
+    border-radius: 5px; /* Zaokrąglenie rogów przycisku */
+    padding: 5px 15px; /* Wewnętrzny odstęp: 5px z góry i dołu, 15px z lewej i prawej */
+    cursor: pointer; /* Kursor zmienia się na "rękę" po najechaniu */
+    text-align: center; /* Tekst w środku przycisku wyrównany do środka */
+    height: 40px; /* Stała wysokość przycisku */
+
+}
+/* stylizuje przyciski (wyłączone, nieaktywne). */
+.przycisk:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#pasazerowie {
+    width: 30px; /* Dostosowana szerokość */
+    text-align: center; /* wyrownanie tekstu w srodku pola */
+    font-size: 16px;
+    border: 1px solid #0056b3; /* kolor obwodki, ciemnoniebieska */
+    border-radius: 5px;/* zaokragla rogi pola */
+    padding: 5px;
+    height: 30px; /* Dopasowana wysokość do innych pól */
+    line-height: normal;
+}
+
+
+
+
+/* Kontener dla zakładek */
+.menu-gorne {
+    display: flex; /* Układ poziomy */
+    justify-content: left; /* Wyśrodkowanie zakładek */
+    gap: 30px; /* Odstęp między zakładkami */
+    margin: 20px 0; /* Odstępy z góry i dołu */
+    font-family: Arial, sans-serif; /* Czcionka */
+    border-bottom: 2px solid #ccc; /* Dolna linia oddzielająca */
+    padding-bottom: 10px; /* Odstęp dolny */
+}
+
+/* Styl zakładek */
+.zakladka {
+    text-decoration: none; /* Usuń podkreślenie */
+    color: #2c2e83; /* Kolor tekstu */
+    font-size: 18px; /* Rozmiar tekstu */
+    font-weight: normal; /* Normalna waga czcionki */
+    transition: color 0.3s ease, font-weight 0.3s ease; /* Animacja zmiany koloru i pogrubienia */
+}
+
+/* Styl dla aktywnej zakładki */
+.zakladka.aktywna {
+    font-weight: bold; /* Pogrubiona czcionka dla aktywnej zakładki */
+    color: #000; /* Kolor tekstu dla aktywnej zakładki */
+    border-bottom: 2px solid #2c2e83; /* Dolna linia aktywnej zakładki */
+}
+
+/* Styl dla hover */
+.zakladka:hover {
+    color: #000; /* Kolor tekstu po najechaniu */
+}

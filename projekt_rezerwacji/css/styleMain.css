@@ -1,0 +1,261 @@
+/* Resetowanie marginesów i paddingów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ogólne style dla body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* bardzo jasny niebieski */
+    display: flex;
+    flex-direction: column; /* Ustaw elementy w kolumnie */
+    align-items: center; /* Wyrownanie zawartosci pionowo w osi Y */
+    min-height: 100vh; /* Minimalna wysokość na cały ekran */
+    width: 100%; /* Szerokość na pełny ekran */
+}
+
+/* Nagłówek */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    width: 100%; /* Szerokość pełna */
+    position: fixed; /* Przyklejony do góry */
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+header .logo h1 {
+    font-size: 24px;
+}
+
+/* Sekcja hero */
+.hero {
+    background: url('../img/pexels-stefanstefancik-91217.jpg') no-repeat center center/cover;
+    color: white; /* Biały tekst */
+    text-align: center;
+    padding: 150px 20px;
+    margin-top: 80px; /* Odstęp od nagłówka */
+    width: 100%; /* Pełna szerokość */
+    flex: 1; /* Zajmuje pozostałą przestrzeń */
+    min-height: 70vh; /* Minimalna wysokość sekcji */
+}
+
+.hero h1 {
+    font-size: 60px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.hero .btn {
+    background: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background: #0056b3;
+}
+
+/* Stopka */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Formularz */
+/* Styl dla całego formularza */
+.formularz {
+    background-color: #f0f8ff; /* Jasnoniebieskie tło */
+    padding: 20px 40px; /* Wewnętrzne odstępy */
+    border-radius: 15px; /* Zaokrąglenie rogów */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Delikatny cień */
+    display: flex;
+    flex-wrap: nowrap; /* Elementy w jednej linii */
+    justify-content: space-between; /* Rozłożenie elementów równomiernie */
+    align-items: center; /* Wyśrodkowanie w pionie */
+    gap: 20px; /* Odstępy między elementami */
+    max-width: 1200px; /* Maksymalna szerokość formularza */
+    margin: 20px auto; /* Wyśrodkowanie */
+}
+
+/* Pola formularza */
+.pole {
+    display: flex;
+    flex-direction: column; /* Układ w kolumnie */
+    gap: 5px; /* Odstęp między etykietą a polem */
+    min-width: 150px; /* Minimalna szerokość pola */
+}
+
+.pole label {
+    font-size: 14px; /* Rozmiar etykiety */
+    color: #333; /* Kolor tekstu */
+    font-weight: 600; /* Pogrubiona etykieta */
+}
+
+.pole input, .pole select {
+    padding: 10px 15px; /* Wewnętrzne odstępy */
+    font-size: 14px; /* Rozmiar tekstu */
+    border: 1px solid #0056b3; /* Ciemnoniebieska obwódka */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Delikatny cień wewnętrzny */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Animacja */
+}
+
+.pole input:focus, .pole select:focus {
+    border-color: #007BFF; /* Jaśniejsza obwódka po fokusie */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Podświetlenie */
+}
+
+/* Przycisk wyszukiwania */
+#szukaj {
+    background-color: #d9534f; /* Czerwony */
+    color: white; /* Biały tekst */
+    padding: 15px 30px; /* Wewnętrzne odstępy */
+    font-size: 16px; /* Rozmiar tekstu */
+    font-weight: bold; /* Pogrubiony tekst */
+    border: none; /* Brak obramowania */
+    border-radius: 10px; /* Zaokrąglone rogi */
+    cursor: pointer; /* Kursor na rękę */
+    transition: background-color 0.3s ease; /* Animacja */
+}
+
+#szukaj:hover {
+    background-color: #c9302c; /* Ciemniejszy czerwony po najechaniu */
+}
+
+/* Typ lotu - przyciski */
+.typ-lotu {
+    display: flex;
+    gap: 15px; /* Odstęp między przyciskami */
+}
+
+.typ-lotu button {
+    background-color: transparent; /* Przezroczysty */
+    border: 2px solid #0056b3; /* Ciemnoniebieska obwódka */
+    color: #0056b3; /* Kolor tekstu */
+    padding: 10px 20px; /* Wewnętrzne odstępy */
+    font-size: 14px; /* Rozmiar tekstu */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    cursor: pointer; /* Kursor na rękę */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Animacja */
+}
+
+.typ-lotu button:hover {
+    background-color: #0056b3; /* Niebieskie tło po najechaniu */
+    color: white; /* Biały tekst po najechaniu */
+}
+
+.typ-lotu .aktywny {
+    background-color: #0056b3; /* Niebieskie tło dla aktywnego */
+    color: white; /* Biały tekst dla aktywnego */
+}
+
+/* Kontener dla liczby pasażerów */
+.kontener-pasazerowie {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.kontener-pasazerowie button {
+    background-color: #0056b3; /* Niebieski */
+    color: white; /* Biały tekst */
+    font-size: 16px;
+    border: none; /* Brak obramowania */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.kontener-pasazerowie button:disabled {
+    background-color: #ccc; /* Szary dla nieaktywnego */
+    cursor: not-allowed; /* Zablokowany kursor */
+}
+
+#pasazerowie {
+    width: 50px; /* Szerokość */
+    text-align: center; /* Wyśrodkowanie tekstu */
+    font-size: 16px; /* Rozmiar tekstu */
+    border: 1px solid #0056b3; /* Obwódka */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    padding: 5px;
+}
+
+#szukaj {
+    height: 40px;
+    padding: 0px 20px;
+    background-color: #d9534f; /* Czerwony */
+    color: white;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#szukaj:hover {
+    background-color: #c9302c;
+}
+
+/* Zakładki */
+.menu-gorne {
+    display: flex;
+    justify-content: left;
+    gap: 30px;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.zakladka {
+    text-decoration: none;
+    color: #2c2e83;
+    font-size: 18px;
+    font-weight: normal;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.zakladka.aktywna {
+    font-weight: bold;
+    color: #000;
+    border-bottom: 2px solid #2c2e83;
+}
+
+.zakladka:hover {
+    color: #000;
+}
