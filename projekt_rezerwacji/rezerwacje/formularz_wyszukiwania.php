@@ -1,28 +1,35 @@
+<?php
+include '../includes/polaczenie.php';
+global $pdo;
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ddsd</title>
+    <title>Wybierz lot</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 <div class="formularz">
-    <div class="menu-gorne">
-        <a href="#zarezerwuj" class="zakladka aktywna">Zarezerwuj</a>
-        <a href="#panel_administracyjny" class="zakladka">Panel administracyjny</a>
-    </div>
-    <div class="typ-lotu">
-        <button id="lot-obie-strony" class="aktywny" type="button">Lot w obie strony</button>
-        <button id="lot-jedna-strona" type="button">Lot w jedną stronę</button>
-    </div>
 
-    <form action="#" method="post">
-        <!-- Skąd -->
+      <div class="typ-lotu">
+          <button id="lot-obie-strony" class="aktywny" type="button">Lot w obie strony</button>
+           <button id="lot-jedna-strona" type="button">Lot w jedną stronę</button>
+       </div>
+
+     <form action="wyniki.php" method="get">
+           <!-- Skąd -->
         <div class="pole">
             <label for="skad">Skąd</label>
             <select id="skad" name="skad">
-
+                <?php
+                // Pobierz unikalne miejsca wylotu z bazy danych
+                $stmt = $pdo->query("SELECT DISTINCT miejsce_wylotu FROM loty");
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    echo "<option value='{$row['miejsce_wylotu']}'>{$row['miejsce_wylotu']}</option>";
+                }
+                ?>
             </select>
         </div>
 
@@ -30,7 +37,13 @@
         <div class="pole">
             <label for="dokad">Dokąd</label>
             <select id="dokad" name="dokad">
-
+                <?php
+                // Pobierz unikalne miejsca wylotu z bazy danych
+                $stmt = $pdo->query("SELECT DISTINCT miejsce_przylotu FROM loty");
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    echo "<option value='{$row['miejsce_przylotu']}'>{$row['miejsce_przylotu']}</option>";
+                }
+                ?>
             </select>
         </div>
 
@@ -71,9 +84,6 @@
         </div>
     </form>
 </div>
-
-
-
 
 <script src="../js/skrypt.js"></script>
 </body>

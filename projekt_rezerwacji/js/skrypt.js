@@ -68,4 +68,4 @@ zakladki.forEach(zakladka => {
 });
 
 // ---------------------------------------------------------------------------
-// pobieranie miast z baz danych
+// obsluga przechowywania wybranego lotu
